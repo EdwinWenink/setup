@@ -19,4 +19,9 @@ else
     echo "Tmux Plugin Manager (TPM) already present."
 fi
 echo "Downloading Tmux config."
-wget https://raw.githubusercontent.com/EdwinWenink/.dotfiles/master/tmux/.tmux.conf -o ~/.tmux.conf
+if [ ! -f ~/.tmux.conf ]
+then
+    wget -P ~ https://raw.githubusercontent.com/EdwinWenink/.dotfiles/master/tmux/.tmux.conf
+else
+    echo "Tmux configuration already present at ~/.tmux.conf"
+fi
